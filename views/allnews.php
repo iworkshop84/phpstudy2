@@ -13,10 +13,10 @@
 
     </div>
 
-    <?php while ($row = mysqli_fetch_array($allNews)): ?>
+    <?php while ($row = $allNews->fetch(PDO::FETCH_LAZY)): ?>
         <div style="float: left; width: 100%">
-            <?= ($row['ndate']), '<br/>' ;?>
-            <a href="<?= '/index.php?id='.$row['id']; ?>"> <?php echo($row['nname']), '<br/>';?></a>
+            <?= ($row->ndate), '<br/>' ;?>
+            <a href="<?= '/index.php?id='.$row['0']; ?>"> <?php echo($row['nname']), '<br/>';?></a>
             <?php echo($row['ntext']), '<br/><br/>';?>
 
         </div>

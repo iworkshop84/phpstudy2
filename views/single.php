@@ -10,12 +10,13 @@
     <div style="font-size: 18px; margin-left: auto; margin-right: auto; width: 500px; padding: 30px 0 30px 0; ">
         <a href="/index.php">Главная</a>
         <a href="/index.php?addnews=yes">Добавление новости</a>
+        <a href="/index.php?update=<?= $news->id;?>">Редактирование новости</a>
     </div>
 
     <div style="float: left; width: 100%">
-        <?php echo($row['ndate']), '<br/>';?>
-        <b><?php echo($row['nname']), '<br/>';?></b>
-        <?php echo($row['ntext']), '<br/><br/>';?>
+        <?php echo($news->ndate), '<br/>';?>
+        <b><?php echo($news->nname), '<br/>';?></b>
+        <?php echo($news->ntext), '<br/><br/>';?>
 
     </div>
 

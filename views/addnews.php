@@ -16,6 +16,7 @@
 
 
 
+
     <div style="margin-left: auto; margin-right: auto; width: 600px ">
 
         <form id="nPost" action="/index.php?addnews=yes" method="post" enctype="application/x-www-form-urlencoded">
