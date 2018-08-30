@@ -9,14 +9,14 @@
 <div style="margin-left: auto; margin-right: auto; width: 1300px ">
     <div style="font-size: 18px; margin-left: auto; margin-right: auto; width: 500px; padding: 30px 0 30px 0; ">
         <a href="/index.php">Главная</a>
-        <a href="/index.php?addnews=yes">Добавление новости</a>
-        <a href="/index.php?update=<?= $news->id;?>">Редактирование новости</a>
+        <a href="/index.php?ctrl=Admin&act=Add">Добавить новость</a>
+
     </div>
 
     <div style="float: left; width: 100%">
-        <?php echo($news->ndate), '<br/>';?>
-        <b><?php echo($news->nname), '<br/>';?></b>
-        <?php echo($news->ntext), '<br/><br/>';?>
+        <?php echo ($item->ndate), '<br/>';?>
+        <b><?php echo($item->nname), '<br/>';?></b>
+        <?php echo($item->ntext), '<br/><br/>';?>
 
     </div>
 

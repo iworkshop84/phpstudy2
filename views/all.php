@@ -9,19 +9,21 @@
 <div style="margin-left: auto; margin-right: auto; width: 1300px ">
     <div style="font-size: 18px; margin-left: auto; margin-right: auto; width: 500px; padding: 30px 0 30px 0; ">
         <a href="/index.php">Главная</a>
-        <a href="/index.php?addnews=yes">Добавление новости</a>
+        <a href="/index.php?ctrl=Admin&act=Add">Добавить новость</a>
 
     </div>
 
-    <?php while ($row = $allNews->fetch(PDO::FETCH_LAZY)): ?>
+
+
+    <?php foreach($news as $items): ?>
         <div style="float: left; width: 100%">
-            <?= ($row->ndate), '<br/>' ;?>
-            <a href="<?= '/index.php?id='.$row['0']; ?>"> <?php echo($row['nname']), '<br/>';?></a>
-            <?php echo($row['ntext']), '<br/><br/>';?>
+            <?= date("d-m-Y H:i:s", $items->ndate), '<br/>' ;?>
+            <a href="<?= '/index.php?ctrl=News&act=One&id='.$items->id; ?>"> <?php echo($items->nname), '<br/>';?></a>
+            <?php echo($items->ntext), '<br/><br/>';?>
 
         </div>
 
-    <?php endwhile;?>
+    <?php endforeach;?>
 
 </div>
 </body>
