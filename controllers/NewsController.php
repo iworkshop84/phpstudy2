@@ -8,14 +8,20 @@ class NewsController
 
         $news = News::getAllOrder('ndate');
 
-        include __DIR__ . '/../views/all.php';
+        $view = new View();
+        $view->items = $news;
+        $view->display('all.php');
     }
 
     public function actionOne(){
 
         $id = $_GET['id'];
-        $item = News::getOne($id);
+        $news = News::getOne($id);
 
-        include __DIR__ . '/../views/one.php';
+        $view = new View();
+        //$view->assign('item', $item);
+        $view->item = $news;
+        $view->display('one.php');
     }
+
 }

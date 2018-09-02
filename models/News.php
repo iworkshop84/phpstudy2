@@ -11,8 +11,4 @@ class News
     protected static $tableName = 'news';
     protected static $className = 'News';
 
-
-
-
-
 }

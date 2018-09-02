@@ -15,7 +15,7 @@
 
 
 
-    <?php foreach($news as $items): ?>
+    <?php foreach($items as $items): ?>
         <div style="float: left; width: 100%">
             <?= date("d-m-Y H:i:s", $items->ndate), '<br/>' ;?>
             <a href="<?= '/index.php?ctrl=News&act=One&id='.$items->id; ?>"> <?php echo($items->nname), '<br/>';?></a>
