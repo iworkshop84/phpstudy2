@@ -15,11 +15,12 @@ class NewsController
 
     public function actionOne(){
 
-        $id = $_GET['id'];
-        $news = News::getOne($id);
+        //$id = $_GET['id'];
+        //$news = News::findById($_GET['id']);
+
+        $news = News::findOneByColumn('id', $_GET['id']);
 
         $view = new View();
-        //$view->assign('item', $item);
         $view->item = $news;
         $view->display('one.php');
     }

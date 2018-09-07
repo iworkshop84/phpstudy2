@@ -13,13 +13,33 @@
 
     </div>
 
-
     <div style="margin-left: auto; margin-right: auto; width: 600px ">
 
         <form id="nPost" action="/index.php?ctrl=Admin&act=Add" method="post" enctype="application/x-www-form-urlencoded">
-            <input type="text" name="nname" placeholder="Введите название"/><br/>
-            <textarea name="ntext" rows="20" cols="60" placeholder="Введите текст"></textarea><br/>
-            <input type="submit" value="Опубликовать">
+            <input type="hidden" name="id" value="<?php
+            if(!empty($item->id)){
+                echo $item->id;
+            }
+            ?>"/>
+            <input type="text" name="nname" placeholder="Введите название" value="<?php
+                        if(!empty($item->nname)){
+                            echo $item->nname;
+                        }
+                        ?>"/><br/>
+            <textarea name="ntext" rows="20" cols="60" placeholder="Введите текст"><?php
+                if(!empty($item->ntext)){
+                    echo $item->ntext;
+                }
+                ?></textarea><br/>
+
+            <input type="submit" value="<?php
+            if(!empty($item->id)){
+                echo 'Обновить';
+            }else{
+                echo 'Опубликовать';
+            }
+            ?>"/>
+            <button name="delete">Удалить</button>
         </form>
 
         <?php

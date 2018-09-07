@@ -3,7 +3,7 @@
 class DB
 {
     private $dbh;
-    public $className = 'stdClass';
+    private $className = 'stdClass';
 
     function __construct(){
        $this->dbh = new PDO("mysql:host=localhost;dbname=nsite;charset=utf8", 'root', '');
@@ -35,4 +35,18 @@ class DB
         $stm->execute($params);
         return $this->dbh->lastInsertId();
     }
+
+    public function execute($sql, $params=[]){
+
+        $stm = $this->dbh->prepare($sql);
+        $res = $stm->execute($params);
+
+        if($res){
+            return $this->dbh->lastInsertId();
+        }else{
+            return $res;
+        }
+    }
+
+
 }
