@@ -57,8 +57,8 @@ abstract class AbstractModel
         $db = new DB;
         $db->setClassName(get_called_class());
 
-        $res = $db->queryOne('SELECT * FROM '.static::$tableName.' WHERE id=:id', [':id'=>$id]);
-        return $res;
+        $sql = 'SELECT * FROM '.static::$tableName.' WHERE id=:id';
+        return $db->queryOne($sql, [':id'=>$id]);
     }
 
 
@@ -87,28 +87,27 @@ abstract class AbstractModel
          (" . implode(", ", array_keys($data)) . ")";
 
         $db = new DB;
-        return $db->execute($sql, $data);
+        $db->execute($sql, $data);
+        return $db->lastInsertId();
     }
 
 
     protected function update(){
 
-        $arr = $this->storage;
-        // делаем массив для подготовленного выражения
         $ins =[];
-        $rools =[];
-        foreach ($arr as $key=>$val){
+        $cools =[];
+        foreach ($this->storage as $key=>$val){
             $ins[':' . $key] = $val;
-            $rools[$key] = $key .' = :' . $key;
+            if('id' == $key){
+                continue;
+            }
+            $cools[] = $key .' = :' . $key;
         }
-        // Удаляем из массива условий ключ id(он у нас всегда будет идти в свойствах первый)
-        $where = array_shift($rools);
 
         $sql = 'UPDATE '. static::$tableName .' 
         SET
-        '. implode(', ', ($rools)) .'
-        WHERE 
-        ('. $where .')';
+        '. implode(', ', ($cools)) .'
+        WHERE id=:id';
 
         $db = new DB();
         return $db->execute($sql, $ins);
@@ -125,49 +124,20 @@ abstract class AbstractModel
 
     public function delete()
     {
-        $arr = $this->storage;
         $ins =[];
-        $params =[];
-        foreach ($arr as $key=>$val){
-            $ins[':' . $key] = $val;
-            $params[$key] = $key .' = :' . $key;
+        foreach ($this->storage as $key=>$val){
+            if('id' == $key){
+                $ins[':id'] = $val;
+            }
         }
-        $where = array_shift($params);
-        $par = array_slice($ins, 0, 1);
 
         $sql = 'DELETE FROM '. static::$tableName .' 
         WHERE 
-        ('. $where .')';
+        id=:id';
 
         $db = new DB();
-        return $db->execute($sql, $par);
+        return $db->execute($sql, $ins);
     }
-
-
-    /*
-    public function save(){
-        if (isset($this->id)) {
-        echo 'Тут будет обновление';
-        die;
-
-        }else{
-            $cols = array_keys($this->storage);
-            $data = [];
-
-            foreach ($cols as $col){
-                $data[':' . $col] = $this->storage[$col];
-            }
-
-            $sql = "INSERT INTO " . static::$tableName . " 
-        (" . implode(", ", $cols) . ") 
-        VALUES
-         (" . implode(", ", array_keys($data)) . ")";
-
-            $db = new DB;
-            return $db->execute($sql, $data);
-        }
-    }
-*/
 
 
     public function fill($arr){
@@ -207,5 +177,26 @@ abstract class AbstractModel
     }
 */
 
+    /*
+        public function delete()
+        {
+            $arr = $this->storage;
+            $ins =[];
+            $params =[];
+            foreach ($arr as $key=>$val){
+                $ins[':' . $key] = $val;
+                $params[$key] = $key .' = :' . $key;
+            }
+            $where = array_shift($params);
+            $par = array_slice($ins, 0, 1);
+
+            $sql = 'DELETE FROM '. static::$tableName .'
+            WHERE
+            ('. $where .')';
+
+            $db = new DB();
+            return $db->execute($sql, $par);
+        }
+    */
 
 }

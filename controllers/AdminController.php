@@ -24,7 +24,6 @@ class AdminController
 
             $news = new News();
             $news->fill($_POST);
-            $news->ndate = time();
 
             $news->save();
 

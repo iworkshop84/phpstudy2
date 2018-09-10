@@ -18,4 +18,12 @@ class News
 */
     protected static $tableName = 'news';
 
+    public function save(){
+        if(!isset($this->id)){
+            $this->ndate = time();
+            return $this->id = $this->insert();
+        }else{
+            return $this->update();
+        }
+    }
 }
