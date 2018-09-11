@@ -21,12 +21,9 @@ class AdminController
             if(empty($_POST['nname'])){
                 $error = 'Введите название и текст новости';
             }else{
-
             $news = new News();
             $news->fill($_POST);
-
             $news->save();
-
             }
         }
 

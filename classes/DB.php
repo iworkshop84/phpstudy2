@@ -6,8 +6,16 @@ class DB
     private $className = 'stdClass';
 
     function __construct(){
-       $this->dbh = new PDO("mysql:host=localhost;dbname=nsite;charset=utf8", 'root', '');
+        try {
+        $opt = [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ];
+        $this->dbh = new PDO("mysql:host=localhost;dbname=nsite;charset=utf8", 'root', '', $opt);
+        }
+        catch (PDOException $e) {
+            $err = new E404Ecxeption('Ошибка соединения с базой данных: <br/>'. $e->getMessage() , $e->getCode());
+            throw $err;
+        }
     }
+
 
     public function setClassName($className)
     {
@@ -15,18 +23,30 @@ class DB
     }
 
     public function queryAll($sql, $params=[]){
-
+        try{
         $stm = $this->dbh->prepare($sql);
         $stm->execute($params);
-        return $stm->fetchAll(PDO::FETCH_CLASS, $this->className);
+        $res = $stm->fetchAll(PDO::FETCH_CLASS, $this->className);
+        }
+        catch (PDOException $e) {
+            $err = new E404Ecxeption('Ошибка запроса: <br/>'. $e->getMessage() , $e->getCode());
+            throw $err;
+        }
+        return $res;
     }
 
     public function queryOne($sql, $params=[]){
-
+        try{
         $stm = $this->dbh->prepare($sql);
         $stm->execute($params);
         $stm->setFetchMode(PDO::FETCH_CLASS, $this->className);
-        return $stm->fetch();
+        $res = $stm->fetch();
+        }
+        catch (PDOException $e) {
+            $err = new E404Ecxeption('Ошибка запроса: <br/>'. $e->getMessage() , $e->getCode());
+            throw $err;
+        }
+        return $res;
     }
 
     public function queryIns($sql, $params=[]){

@@ -10,7 +10,6 @@ class View
         $this->data[$key] = $value;
     }
 
-
     public function __get($key)
     {
         return  $this->data[$key];

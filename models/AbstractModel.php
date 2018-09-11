@@ -49,6 +49,11 @@ abstract class AbstractModel
 
         $sql = 'SELECT * FROM '. static::$tableName.' ORDER BY '.$tname.' '.$ord.'';
         $stm = $db->queryAll($sql);
+
+        if(empty($stm)){
+            $err = new E404Ecxeption('Записей нет' , 404);
+            throw $err;
+        }
         return $stm;
     }
 
@@ -58,7 +63,13 @@ abstract class AbstractModel
         $db->setClassName(get_called_class());
 
         $sql = 'SELECT * FROM '.static::$tableName.' WHERE id=:id';
-        return $db->queryOne($sql, [':id'=>$id]);
+        $res = $db->queryOne($sql, [':id'=>$id]);
+
+        if(!$res){
+            $err = new E404Ecxeption('Запись не найдена' , 404);
+            throw $err;
+        }
+        return $res;
     }
 
 
@@ -67,8 +78,13 @@ abstract class AbstractModel
         $db->setClassName(get_called_class());
 
         $sql = 'SELECT * FROM '.static::$tableName.' WHERE '.$column.'=:'.$column;
-        return $db->queryOne($sql, [':'.$column=>$value]);
+        $res =  $db->queryOne($sql, [':'.$column=>$value]);
 
+        if(!$res){
+            $err = new E404Ecxeption('Запись не найдена' , 404);
+            throw $err;
+        }
+        return $res;
     }
 
 

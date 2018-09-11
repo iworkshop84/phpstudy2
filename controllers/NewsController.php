@@ -15,10 +15,7 @@ class NewsController
 
     public function actionOne(){
 
-        //$id = $_GET['id'];
-        //$news = News::findById($_GET['id']);
-
-        $news = News::findOneByColumn('id', $_GET['id']);
+        $news = News::findOneById($_GET['id']);
 
         $view = new View();
         $view->item = $news;
