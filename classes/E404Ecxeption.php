@@ -1,7 +1,9 @@
 <?php
 
+namespace App\Classes;
+
 class E404Ecxeption
-    extends Exception
+    extends \Exception
 {
 
     public function logFile(){

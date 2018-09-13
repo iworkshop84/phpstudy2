@@ -9,7 +9,7 @@
 <div style="margin-left: auto; margin-right: auto; width: 1300px ">
     <div style="font-size: 18px; margin-left: auto; margin-right: auto; width: 500px; padding: 30px 0 30px 0; ">
         <a href="/index.php">Главная</a>
-        <a href="/index.php?ctrl=Admin&act=Add">Добавить новость</a>
+        <a href="/admin/add">Добавить новость</a>
 
     </div>
 

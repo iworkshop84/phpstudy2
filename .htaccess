@@ -1,1 +1,17 @@
+<IfModule mod_rewrite.c>
 RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/ [OR]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+
+RewriteRule ^(.*)$ index.php [L]
+
+
+
+
+
+</IfModule>

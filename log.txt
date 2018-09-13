@@ -6,13 +6,13 @@
 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELE121212CT * FROM news WHERE id='340'' at line 1 FILE: W:\domains\mysite.loc\classes\DB.php Line:  46
 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELE121212CT * FROM news WHERE id='340'' at line 1 FILE: W:\domains\mysite.loc\classes\DB.php Line: 46
 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELE121212CT * FROM news WHERE id='340'' at line 1 FILE: W:\domains\mysite.loc\classes\DB.php Line: 46
-Ошибка соединения с базой данных: <br/>SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  FILE: W:\domains\mysite.loc\classes\DB.php Line: 14
-Ошибка соединения с базой данных: <br/>SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  FILE: W:\domains\mysite.loc\classes\DB.php Line: 14
+Ошибка соединения с базой данных: <br/>SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  FILE: W:\domains\mysite.loc\classes\DB.php Line: 14
+Ошибка соединения с базой данных: <br/>SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  FILE: W:\domains\mysite.loc\classes\DB.php Line: 14
 Ошибка соединения с базой данных: <br/>SQLSTATE[HY000] [1049] Unknown database '121212nsite' FILE: W:\domains\mysite.loc\classes\DB.php Line: 14
 Ошибка соединения с базой данных: <br/>SQLSTATE[HY000] [1049] Unknown database '121212nsite' FILE: W:\domains\mysite.loc\classes\DB.php Line: 14
-Запись не найдена FILE: W:\domains\mysite.loc\models\AbstractModel.php Line: 69
-Запись не найдена FILE: W:\domains\mysite.loc\models\AbstractModel.php Line: 69
-Запись не найдена FILE: W:\domains\mysite.loc\models\AbstractModel.php Line: 69
+Запись не найдена FILE: W:\domains\mysite.loc\models\AbstractM.php Line: 69
+Запись не найдена FILE: W:\domains\mysite.loc\models\AbstractM.php Line: 69
+Запись не найдена FILE: W:\domains\mysite.loc\models\AbstractM.php Line: 69
 Date:09.11.2018Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1212121212SELECT * FROM news WHERE id='340'' at line 1 FILE: W:\domains\mysite.loc\classes\DB.php Line: 46
 Date:09.11.2018Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1212121212SELECT * FROM news WHERE id='340'' at line 1 FILE: W:\domains\mysite.loc\classes\DB.php Line: 46
 Date: 09.11.2018 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1212121212SELECT * FROM news WHERE id='340'' at line 1 FILE: W:\domains\mysite.loc\classes\DB.php Line: 46
@@ -23,3 +23,26 @@ Date:09.11.2018 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error 
 Date:09.11.2018 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1212121212SELECT * FROM news WHERE id='340'' at line 1 FILE:W:\domains\mysite.loc\classes\DB.php Line:46
 Date:22:09:48 09.11.2018 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1212121212SELECT * FROM news WHERE id='340'' at line 1 FILE:W:\domains\mysite.loc\classes\DB.php Line:46
 Date:22:09:49 09.11.2018 Ошибка запроса: <br/>SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1212121212SELECT * FROM news WHERE id='340'' at line 1 FILE:W:\domains\mysite.loc\classes\DB.php Line:46
+Date:01:09:44 09.12.2018 Запись не найдена FILE:W:\domains\mysite.loc\models\AbstractM.php Line:69
+Date:17:09:30 09.13.2018 Запись не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:20
+Date:17:09:35 09.13.2018 Запис111ь не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:20
+Date:17:09:58 09.13.2018 Запись не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:24
+Date:17:09:22 09.13.2018 Записей нет FILE:W:\domains\mysite.loc\controllers\News.php Line:11
+Date:17:09:28 09.13.2018 Запи11сей нет FILE:W:\domains\mysite.loc\controllers\News.php Line:11
+Date:18:09:07 09.13.2018 Запись не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:24
+Date:18:09:26 09.13.2018 Запись не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:24
+Date:18:09:00 09.13.2018 Запись не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:24
+Date:18:09:01 09.13.2018 Запись не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:24
+Date:18:09:32 09.13.2018 Запись не найдена FILE:W:\domains\mysite.loc\controllers\News.php Line:24
+Date:18:09:21 09.13.2018 Такой страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:28
+Date:18:09:42 09.13.2018 Такой страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:28
+Date:18:09:59 09.13.2018 Такой страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:28
+Date:18:09:37 09.13.2018 Такой страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:28
+Date:18:09:46 09.13.2018 Такой страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:28
+Date:18:09:57 09.13.2018 Такой страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:28
+Date:18:09:13 09.13.2018 Такой 11страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:29
+Date:18:09:10 09.13.2018 Такой 11страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:29
+Date:18:09:11 09.13.2018 Такой 11страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:29
+Date:18:09:16 09.13.2018 Такой 11страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:29
+Date:18:09:44 09.13.2018 Такой 11страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:29
+Date:18:09:46 09.13.2018 Такой 11страницы на сайте нет FILE:W:\domains\mysite.loc\index.php Line:29

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 /**
  * Class News
  * @property $id
@@ -8,7 +10,7 @@
  * @property $ndate
  */
 class News
-    extends AbstractModel
+    extends AbstractM
 {
     /*
     public $id;

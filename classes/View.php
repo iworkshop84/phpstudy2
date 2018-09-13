@@ -1,7 +1,9 @@
 <?php
 
+namespace App\Classes;
+
 class View
-    implements Iterator
+    implements \Iterator
 {
     protected $data = [];
 

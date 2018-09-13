@@ -1,7 +1,11 @@
 <?php
 
+namespace App\Controllers;
 
-class AdminController
+use App\Models\News;
+use App\Classes\View;
+
+class Admin
 {
 
     public function actionAdd(){
@@ -13,7 +17,7 @@ class AdminController
                 $news->fill($_POST);
                 $news->delete();
 
-                header('Location: /index.php?ctrl=Admin&act=Add');
+                header('Location: /admin/add');
                 exit;
             }
 

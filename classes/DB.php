@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Classes;
+
 class DB
 {
     private $dbh;
@@ -7,10 +9,10 @@ class DB
 
     function __construct(){
         try {
-        $opt = [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ];
-        $this->dbh = new PDO("mysql:host=localhost;dbname=nsite;charset=utf8", 'root', '', $opt);
+        $opt = [ \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION ];
+        $this->dbh = new \PDO("mysql:host=localhost;dbname=nsite;charset=utf8", 'root', '', $opt);
         }
-        catch (PDOException $e) {
+        catch (\PDOException $e) {
             $err = new E404Ecxeption('Ошибка соединения с базой данных: <br/>'. $e->getMessage() , $e->getCode());
             throw $err;
         }
@@ -26,9 +28,9 @@ class DB
         try{
         $stm = $this->dbh->prepare($sql);
         $stm->execute($params);
-        $res = $stm->fetchAll(PDO::FETCH_CLASS, $this->className);
+        $res = $stm->fetchAll(\PDO::FETCH_CLASS, $this->className);
         }
-        catch (PDOException $e) {
+        catch (\PDOException $e) {
             $err = new E404Ecxeption('Ошибка запроса: <br/>'. $e->getMessage() , $e->getCode());
             throw $err;
         }
@@ -39,10 +41,10 @@ class DB
         try{
         $stm = $this->dbh->prepare($sql);
         $stm->execute($params);
-        $stm->setFetchMode(PDO::FETCH_CLASS, $this->className);
+        $stm->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         $res = $stm->fetch();
         }
-        catch (PDOException $e) {
+        catch (\PDOException $e) {
             $err = new E404Ecxeption('Ошибка запроса: <br/>'. $e->getMessage() , $e->getCode());
             throw $err;
         }

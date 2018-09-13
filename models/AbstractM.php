@@ -1,7 +1,9 @@
 <?php
+namespace App\Models;
 
+use App\Classes\DB;
 
-abstract class AbstractModel
+abstract class AbstractM
 
 {
     protected static $tableName;
@@ -50,10 +52,6 @@ abstract class AbstractModel
         $sql = 'SELECT * FROM '. static::$tableName.' ORDER BY '.$tname.' '.$ord.'';
         $stm = $db->queryAll($sql);
 
-        if(empty($stm)){
-            $err = new E404Ecxeption('Записей нет' , 404);
-            throw $err;
-        }
         return $stm;
     }
 
@@ -65,10 +63,6 @@ abstract class AbstractModel
         $sql = 'SELECT * FROM '.static::$tableName.' WHERE id=:id';
         $res = $db->queryOne($sql, [':id'=>$id]);
 
-        if(!$res){
-            $err = new E404Ecxeption('Запись не найдена' , 404);
-            throw $err;
-        }
         return $res;
     }
 
@@ -80,11 +74,15 @@ abstract class AbstractModel
         $sql = 'SELECT * FROM '.static::$tableName.' WHERE '.$column.'=:'.$column;
         $res =  $db->queryOne($sql, [':'.$column=>$value]);
 
+        return $res;
+        /*  Оставил как пример выброса исключения из абстрактного класса
+            Но лучше бросать из контроллеров, чтобы потом не было проблем с использованием для других классов
         if(!$res){
             $err = new E404Ecxeption('Запись не найдена' , 404);
             throw $err;
         }
-        return $res;
+        */
+
     }
 
 
