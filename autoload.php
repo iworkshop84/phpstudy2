@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+
 function my_autoload($class)
 {
     /* Старый вариант автозагрузки который исполбзовался до неймспейсов

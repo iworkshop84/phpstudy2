@@ -17,22 +17,13 @@ $id = !empty($pathParts[3]) ? $pathParts[3] : null;
 $ctrl = ucfirst(mb_strtolower($ctrl));
 $act = ucfirst(mb_strtolower($act));
 
-/*
-$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
-$act = isset($_GET['act']) ? $_GET['act'] : 'All';
-*/
-
-
-
 
 try{
     $ctrlClassName =  'App\\Controllers\\' . $ctrl;
 
-    /*
     if(!class_exists($ctrlClassName)){
         throw new E404Ecxeption ('Такой страницы на сайте нет', 404);
     }
-    */
 
     $controller = new $ctrlClassName;
     $method = 'action' . $act;
